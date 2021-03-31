@@ -39,6 +39,7 @@ var BOUGHT_VACCINES = 61500000;
 
 var GRADIENT_COLORS = ["#fb735f", "#ff8d5a", "#ffa65b", "#fcbf62", "#f7d771", "#e9dc6f", "#c9e473", "#acd75f", "#8dca4c", "#6bbd3b", "#42b02b"];
 
+const BODY = document.body;
 const NAME_ROW = 0;
 const DP_ROW = 2;
 const POP_ROW = 3;
@@ -95,6 +96,7 @@ function initClient() {
     }, function(error) {
         appendPre(JSON.stringify(error, null, 2));
     });
+    BODY.classList.toggle('noscroll');
 }
 
 /**
@@ -380,6 +382,7 @@ function closedialog() {
 
 function closeoverlay() {
     document.getElementById("overlay-thing").style.display = "none";
+    BODY.classList.toggle('noscroll');
 }
 
 
